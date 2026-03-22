@@ -203,6 +203,15 @@
   }
 }
 @layer utilities {
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+  .m-auto {
+    margin: auto;
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
   .flex {
     display: flex;
   }
@@ -214,6 +223,9 @@
   }
   .h-32 {
     height: calc(var(--spacing) * 32);
+  }
+  .min-h-screen {
+    min-height: 100vh;
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
@@ -492,6 +504,20 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-green-600);
+      }
+    }
+  }
+  .hover\:no-underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: none;
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
       }
     }
   }
