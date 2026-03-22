@@ -17,26 +17,34 @@
         <!-- Input-container starts -->
         <div class="input-cont flex justify-center items-center flex-col gap-3 md:gap-4 border-2 border-gray-700 p-4 md:p-6 rounded-lg bg-gray-800">
             <p class="text-lg md:text-2xl px-2 text-gray-300">Search for a GitHub user:</p>
-            <input type="text" id="username" class="text-md md:text-lg p-2 rounded-lg text-white w-full outline-none border-2 border-transparent hover:border-green-600" placeholder="Enter GitHub username">
+            <input type="text" id="user-input" class="text-md md:text-lg p-2 rounded-lg text-white w-full outline-none border-2 border-transparent hover:border-green-600" placeholder="Enter GitHub username">
             <button class="md:text-lg text-gray-300 bg-green-700 hover:bg-green-600 active:bg-green-700  font-medium rounded-lg w-full p-1.5 md:p-2">Search</button>
         </div>
         <!-- Input-container ends --> 
          
         <!-- output-container starts -->
-        <div class="output-cont flex justify-center items-center flex-col gap-3 md:gap-4 border-2 border-gray-700 p-4 md:p-6 rounded-lg bg-gray-800 md:min-w-100">
-            <div class="img-cont border-4 border-green-600 rounded-full">
-                <img class="h-32 w-32 rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5-8Chu2Jala7WIXFNYCt4PY78NzZng1MVcw&s" alt="">
-            </div>
-            <div class="info-cont flex flex-col gap-2">
-                <p class="para name-paratext-lg md:text-2xl font-semibold text-center">Prabhjot Singh</p>
-                <p class="para bio-para text-sm md:text-md text-center text-gray-300">A Btech. student curious to learn web dev</p>
-                <p class="para location-para text-md md:text-lg text-center">Location: <span class="location text-green-500">Punjab, India</span></p>
-                <p class="para followers-para text-md md:text-lg text-center">Followers: <span class="followers text-green-500">18</span></p>
-                <p class="para following-para text-md md:text-lg text-center">Following: <span class="following text-green-500">12</span></p>
-                <p class="para repo-para text-md md:text-lg  text-center">Repos: <span class="repo text-green-500">19</span></p>
-            </div>
-        </div>
+        <div class="output-cont flex justify-center items-center flex-col gap-3 md:gap-4 border-2 border-gray-700 p-4 md:p-6 rounded-lg bg-gray-800 min-w-60 md:min-w-100">
 
+            <div class="img-cont border-4 border-green-600 rounded-full">
+                <a id="link" href="#" class="no-underline cursor-default" target="_blank">
+                    <img id="user-img" class="h-32 w-32 rounded-full" src="images/github-img.png" alt="">
+                </a>
+            </div>
+
+            <div class="info-cont flex flex-col justify-center items-center gap-2">
+                <p id="user-name" class="hidden para text-lg md:text-2xl font-semibold text-center text-green-500">Prabhjot Singh</p>
+                <p id="user-bio" class="hidden para text-sm md:text-md text-center text-gray-300">A Btech. student curious to learn web dev</p>
+                <p class="hidden para text-md md:text-lg text-center">From: <span class="location text-green-500" id="user-location">Punjab, India</span></p>
+                <p class="hidden para text-md md:text-lg text-center">Followers: <span class="followers text-green-500" id="user-followers">18</span></p>
+                <p class="hidden para text-md md:text-lg text-center">Following: <span class="following text-green-500" id="user-following">12</span></p>
+                <p class="hidden para text-md md:text-lg  text-center">Repos: <span class="repo text-green-500" id="user-repos">19</span></p>
+            </div>
+
+            <p id="loader" class="text-xl md:text-2xl text-green-500 text-center font-semibold hidden">Fetching data from GitHub...</p>
+    
+        </div>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>
