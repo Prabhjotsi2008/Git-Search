@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+/* Smooth transitions for theme changes and interactions */
+@layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+
+  button {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  input {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  img {
+    @apply transition-opacity duration-500;
+  }
+
+  /* Enhanced transitions for specific elements */
+  #theme-toggle {
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  #search-btn {
+    @apply active:scale-95;
+  }
+
+  #user-input {
+    @apply focus:scale-102;
+  }
+
+  .para {
+    @apply transition-all duration-500;
+  }
+
+  #toggle-icon {
+    @apply transition-transform duration-300;
+  }
+}

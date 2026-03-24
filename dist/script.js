@@ -22,12 +22,19 @@ const userParas = document.querySelectorAll(".para");
 
 const BASE_URL = "https://api.github.com/users/"
 
+// Main function to fetch and display GitHub user data
 searchButton.addEventListener("click", () => {
     userImg.src = "images/github-svgrepo-com.svg";
+    userLink.removeAttribute("href");
     loader.classList.add("text-green-500")
     loader.textContent = "Fetching data from GitHub..."
     loader.classList.remove("hidden");
-    userParas.forEach(para => para.classList.add("hidden"));
+    
+    // Fade out paragraphs
+    userParas.forEach(para => {
+        para.classList.add("opacity-0");
+        setTimeout(() => para.classList.add("hidden"), 300);
+    });
 
     const username = userInput.value.toLowerCase().trim();
     console.log(username);
@@ -37,6 +44,7 @@ searchButton.addEventListener("click", () => {
         loader.classList.add("text-gray-400")
         loader.textContent = "Enter a valid username"
         userParas.forEach(para => para.classList.add("hidden"));
+        // userLink.removeAttribute("href");
         return;
     }
     setTimeout(async () => {
@@ -49,6 +57,7 @@ searchButton.addEventListener("click", () => {
             loader.classList.remove("text-green-500")
             loader.classList.add("text-gray-400")
             loader.textContent = `Username ${username} not found`
+            // userLink.removeAttribute("href");
             return;
         }
         const name = `${data.name || "N/A"} (${data.type})`;
@@ -61,7 +70,14 @@ searchButton.addEventListener("click", () => {
         const link = data.html_url || "#";
 
         loader.classList.add("hidden");
-        userParas.forEach(para => para.classList.remove("hidden"));
+        
+        // Fade in paragraphs smoothly
+        userParas.forEach(para => {
+            para.classList.remove("hidden");
+            // Trigger reflow to reset opacity-0
+            void para.offsetWidth;
+            para.classList.remove("opacity-0");
+        });
 
         userName.textContent = name;
         userBio.textContent = bio;
@@ -75,14 +91,23 @@ searchButton.addEventListener("click", () => {
     } catch(err){
         alert("Error in fetching data from GitHub. Please try again later.");
         loader.classList.add("hidden");
-        userParas.forEach(para => para.classList.add("hidden"));
+        // Fade out paragraphs
+        userParas.forEach(para => {
+            para.classList.add("opacity-0");
+            setTimeout(() => para.classList.add("hidden"), 300);
+        });
     }
     },1500);
 });
 
 // Theme toggle functionality
 themeToggle.addEventListener("click", () => {
-    toggleIcon.src = toggleIcon.src.includes("dark-mode-github.svg") ? "images/light-mode-github.svg" : "images/dark-mode-github.svg";  
+    // Rotate icon for visual feedback
+    toggleIcon.style.transform = "rotate(180deg)";
+    setTimeout(() => {
+        toggleIcon.src = toggleIcon.src.includes("dark-mode-github.svg") ? "images/light-mode-github.svg" : "images/dark-mode-github.svg";
+        toggleIcon.style.transform = "rotate(0deg)";
+    }, 150);
 
     document.body.classList.toggle("bg-slate-100");
     document.body.classList.toggle("text-slate-900");
