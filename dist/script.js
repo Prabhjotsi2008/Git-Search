@@ -86,6 +86,8 @@ themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("bg-slate-100");
     document.body.classList.toggle("text-slate-900");
+    document.body.classList.toggle("selection:bg-slate-300");
+    // document.body.classList.toggle("selection:text-green-900");
     inputCont.classList.toggle("bg-white");
     inputCont.classList.toggle("border-slate-200");
     titleBar.classList.toggle("bg-white");

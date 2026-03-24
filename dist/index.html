@@ -9,13 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="font-[Silkscreen] bg-gray-900 text-gray-300 min-h-screen flex flex-col md:px-10">
+<body class="font-[Silkscreen] bg-gray-900 text-gray-300 min-h-screen flex flex-col md:px-10 selection:text-green-500 selection:bg-gray-700">
     <!-- header starts -->
     <header class="flex items-center justify-center p-2 px-4 gap-2 font-bold text-green-500">
         <div class="flex justify-center items-center w-full">
         <h1 id="title-bar" class="text-2xl md:text-3xl bg-gray-800 border-2 border-gray-700 p-3 rounded-lg shadow-sm">Git-Search</h1>
         </div>
-        <button id="theme-toggle" class="outline-none bg-gray-800 border-2 border-gray-700 p-3 rounded-lg shadow-sm"><img src="images/dark-mode-github.svg" alt="" id="toggle-icon"></button>
+        <button id="theme-toggle" class="outline-none bg-gray-800 border-2 border-gray-700 p-3 rounded-lg shadow-sm select-none"><img src="images/dark-mode-github.svg" alt="" id="toggle-icon"></button>
     </header>
     <!-- header ends -->
 
@@ -24,14 +24,14 @@
         <div class="input-cont flex justify-center items-center flex-col gap-3 md:gap-4 border-2 border-gray-700 p-4 md:p-6 rounded-lg bg-gray-800 shadow-sm">
             <p class="text-lg md:text-2xl px-2">Search for a GitHub user:</p>
             <input type="text" id="user-input" class="text-md md:text-lg p-2 rounded-lg w-full outline-none border-2 border-transparent hover:border-green-600 text-gray-400" placeholder="Enter GitHub username">
-            <button id="search-btn" class="md:text-lg bg-green-500 hover:bg-green-600 active:bg-green-700 font-medium rounded-lg w-full p-1.5 md:p-2 text-gray-200">Search</button>
+            <button id="search-btn" class="md:text-lg bg-green-500 hover:bg-green-600 active:bg-green-700 font-medium rounded-lg w-full p-1.5 md:p-2 text-gray-100 select-none">Search</button>
         </div>
         <!-- Input-container ends --> 
          
         <!-- output-container starts -->
         <div class="output-cont flex justify-center items-center flex-col gap-3 md:gap-4 border-2 border-gray-700 p-4 md:p-6 rounded-lg bg-gray-800 min-w-60 md:min-w-100 shadow-sm">
 
-            <div class="img-cont border-4 border-green-600 rounded-full">
+            <div class="img-cont border-4 border-green-600 rounded-full select-none">
                 <a id="link" href="#" class="no-underline cursor-default" target="_blank">
                     <img id="user-img" class="h-32 w-32 rounded-full" src="images/github-svgrepo-com.svg" alt="">
                 </a>
