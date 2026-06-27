@@ -70,15 +70,11 @@ npm run dev
 
 Open `src/index.html` in your browser, or use a local development server such as Live Server.
 
-> ## Screenshots
+## Screenshots
 
-Add screenshots of the application here.
-
-```md
 ![Dark Theme](src/screenshots/Git-Search-Dark.png)
 
 ![Light Theme](src/screenshots/Git-Search-Light.png)
-```
 
 > ##  How It Works
 
