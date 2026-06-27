@@ -60,7 +60,7 @@ const fetchData = () => {
             // userLink.removeAttribute("href");
             return;
         }
-        const name = `${data.name || "N/A"} (${data.type})`;
+        const name = `${data.name || data.login || "N/A"} (${data.type})`; // added login-name option also
         const bio = data.bio || "N/A";
         const location = data.location || "N/A";
         const followers = data.followers || 0;
