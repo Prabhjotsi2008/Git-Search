@@ -23,7 +23,7 @@ const userParas = document.querySelectorAll(".para");
 const BASE_URL = "https://api.github.com/users/"
 
 // Main function to fetch and display GitHub user data
-searchButton.addEventListener("click", () => {
+const fetchData = () => {
     userImg.src = "images/github-svgrepo-com.svg";
     userLink.removeAttribute("href");
     loader.classList.add("text-green-500")
@@ -98,7 +98,20 @@ searchButton.addEventListener("click", () => {
         });
     }
     },1500);
+};
+
+
+// Event listener for Button click
+searchButton.addEventListener("click", fetchData);
+
+
+// Event listener for keypress (ENTER)
+userInput.addEventListener("keypress",(e) => {
+    if (e.key === "Enter"){
+            fetchData();
+    }
 });
+
 
 // Theme toggle functionality
 themeToggle.addEventListener("click", () => {
